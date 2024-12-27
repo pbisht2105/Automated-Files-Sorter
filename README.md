@@ -1,5 +1,5 @@
 # Automated File Sorter
-![File Sorter Project cover]()
+![File Sorter Project cover](https://github.com/pbisht2105/Automated-Files-Sorter/blob/main/Automated%20Files%20Sorter.png)
 
 
 ## Goal of the Project
