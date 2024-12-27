@@ -93,7 +93,7 @@ for file in filename:
         
         shutil.move(file_path, new_target_file_path)
         print(f"File conflict resolved: {file} renamed to {new_file_name} and moved to {target_folder}")
-
+```
 
 Code Explanation in Layman's Terms:
 Setting Paths and File Types:
