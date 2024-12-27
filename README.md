@@ -94,37 +94,46 @@ for file in filename:
         shutil.move(file_path, new_target_file_path)
         print(f"File conflict resolved: {file} renamed to {new_file_name} and moved to {target_folder}")
 ```
+## Code Explanation in Layman's Terms
 
-Code Explanation in Layman's Terms:
-Setting Paths and File Types:
+### 1. **Setting Paths and File Types:**
+The script specifies a folder (`path = "C:\\Users\\user\\Downloads\\New folder\\"`) where the files you want to organize are located. It also defines which types of files go into which folder. For example:
+- `.csv`, `.xlsx`, `.docx`, and `.pptx` files will go into the "MS Office files" folder.
+- `.jpeg`, `.jpg`, and `.png` files will go into the "Pictures" folder.
 
-The script specifies a folder (path = "C:\\Users\\user\\Downloads\\New folder\\") where the files you want to organize are located.
-It also defines which types of files go into which folder. For example, .csv, .xlsx, .docx, and .pptx files will go into "MS Office files", while .jpeg, .jpg, and .png files will go into "Pictures".
-Folder Creation:
+### 2. **Folder Creation:**
+The script checks if the folders ("MS Office files", "Pictures", "Videos", etc.) already exist. If they don’t, it creates them automatically. This helps keep your files organized and ensures there is a dedicated folder for each file type.
 
-The script checks if the folders ("MS Office files", "Pictures", "Videos", etc.) already exist. If they don’t, it creates them automatically.
-Identifying Files to Move:
+### 3. **Identifying Files to Move:**
+It then gets a list of all files in the specified folder (`path`). For each file:
+- If the file is a directory, it is skipped.
+- The script checks the file extension (like `.csv`, `.jpg`, `.mp4`) and decides which folder to move the file into based on its extension.
 
-It then gets a list of all files in the specified folder (path). For each file:
-If the file is a directory, it is skipped.
-It checks the file extension (like .csv, .jpg, .mp4) and decides which folder to move the file into based on its extension.
-Moving Files:
+### 4. **Moving Files:**
+- If the file doesn't exist in the target folder, it simply moves the file there.
+- If the file already exists in the target folder, it adds a timestamp to the file’s name to make it unique. For example, `file1.csv` could become `file1_20231227_123456.csv`.
+- If a file with the new name already exists, it appends another timestamp to make the name unique.
 
-If the file doesn't exist in the target folder, it moves the file there.
-If the file already exists in the target folder, it adds a timestamp to the file’s name to make it unique (like file1_20231227_123456.csv). If a file with the new name already exists, it appends another timestamp to make it unique.
-Output:
+### 5. **Output:**
+The script prints messages telling you which files were moved and which ones were renamed due to conflicts. This way, you can see exactly what’s happening behind the scenes.
 
-The script prints messages telling you which files were moved and which ones were renamed due to conflicts.
-How It Works Example:
-You have a file document1.csv in your Downloads folder.
-The script checks the file and sees that it's a .csv file, so it moves it to the "MS Office files" folder.
-If you have another document1.csv, the script renames it to something like document1_20231227_123456.csv to avoid overwriting the first file.
-How to Use This Code:
-Make sure Python is installed on your computer.
-Copy and paste this code into a Python file, for example organize_files.py.
-Adjust the path variable to point to the folder where your files are located.
-Run the script, and it will organize the files in your folder into the appropriate subfolders based on file type.
-This script helps keep your files organized automatically by their types, and it ensures there are no filename conflicts.
+---
+
+## How It Works Example:
+You have a file `document1.csv` in your Downloads folder. The script checks the file and sees that it's a `.csv` file, so it moves it to the "MS Office files" folder. If you have another `document1.csv`, the script renames it to something like `document1_20231227_123456.csv` to avoid overwriting the first file.
+
+---
+
+## How to Use This Code:
+1. **Install Python:** Make sure Python is installed on your computer.
+2. **Copy and Paste the Code:** Copy and paste this code into a Python file, for example `organize_files.py`.
+3. **Adjust the Path:** Modify the `path` variable in the code to point to the folder where your files are located.
+4. **Run the Script:** Execute the script by running `python organize_files.py` in your command line or terminal.
+5. **Automatic Organization:** The script will automatically organize the files in your folder into the appropriate subfolders based on their file types.
+
+---
+
+This script helps keep your files organized automatically by their types, and it ensures there are no filename conflicts by renaming files if necessary.
 
 ## Author
 
